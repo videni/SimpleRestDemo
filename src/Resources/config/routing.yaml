@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Action\PlaceholderAction:
+        public: true
+
+    App\Routing\ResourceRouteLoader:
+        arguments:
+            - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+            - 'App\Action\PlaceholderAction'
+            - '%simple_rest.resource_class_directories%'
+        tags: [ 'routing.loader' ]

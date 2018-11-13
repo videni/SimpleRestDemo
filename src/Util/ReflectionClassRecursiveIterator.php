@@ -1,0 +1,50 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Util;
+
+/**
+ * Gets reflection classes for php files in the given directories.
+ */
+final class ReflectionClassRecursiveIterator
+{
+    private function __construct()
+    {
+    }
+
+    public static function getReflectionClassesFromDirectories(array $directories): \Iterator
+    {
+        foreach ($directories as $path) {
+            $iterator = new \RegexIterator(
+                new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($path, \FilesystemIterator::SKIP_DOTS),
+                    \RecursiveIteratorIterator::LEAVES_ONLY
+                ),
+                '/^.+\.php$/i',
+                \RecursiveRegexIterator::GET_MATCH
+            );
+
+            foreach ($iterator as $file) {
+                $sourceFile = $file[0];
+
+                if (!preg_match('(^phar:)i', $sourceFile)) {
+                    $sourceFile = realpath($sourceFile);
+                }
+
+                require_once $sourceFile;
+
+                $includedFiles[$sourceFile] = true;
+            }
+        }
+
+        $declared = get_declared_classes();
+        foreach ($declared as $className) {
+            $reflectionClass = new \ReflectionClass($className);
+            $sourceFile = $reflectionClass->getFileName();
+            if (isset($includedFiles[$sourceFile])) {
+                yield $className => $reflectionClass;
+            }
+        }
+    }
+}

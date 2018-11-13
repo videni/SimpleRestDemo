@@ -1,0 +1,15 @@
+services:
+    App\Metadata\Extractor\AbstractExtractor:
+        abstract: true
+
+    App\Metadata\Extractor\YamlExtractor:
+        parent: 'App\Metadata\Extractor\AbstractExtractor'
+        arguments:
+            - "%simple_rest.resource_class_directories%"
+
+    App\Metadata\Extractor\ExtractorChain:
+        arguments:
+            - ['@App\Metadata\Extractor\YamlExtractor']
+
+
+    App\Metadata\Extractor\ExtractorInterface: '@App\Metadata\Extractor\ExtractorChain'

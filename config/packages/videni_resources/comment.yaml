@@ -1,0 +1,33 @@
+App\Enity\Comment:
+  operations:
+    create_comment:
+        path: '/comments/{postId}'
+        methods: ['POST']
+        factory: '@app_factory_comment->create($postId)'
+        normalization_context:
+               groups: ['read']
+        denormalization_context:
+             groups: ['write']
+        validation_groups:  ['pintushi']
+    update_comment:
+        path: '/comments'
+        methods: ['PUT']
+        normalization_context:
+               groups: ['read']
+        denormalization_context:
+             groups: ['write']
+        validation_groups:  ['pintushi']
+    get_comments:
+        path: '/comments'
+        methods: ['GET']
+        grid: 'app_comment_grid'
+    delete_comment:
+        path: '/comments/{id}'
+        methods: ['GET']
+  attributes:
+        normalization_context:
+             groups: ['read']
+        denormalization_context:
+           groups: ['write']
+        validation_groups:  ['pintushi']
+        route_prefix: /admin

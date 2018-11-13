@@ -1,0 +1,17 @@
+App\Entity\User:
+    exclusion_policy: ALL
+    xml_root_name: user
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+            groups: [Default, Detailed]
+        fullName:
+            expose: true
+            type: string
+            groups: [Default, Detailed]
+        username:
+            expose: true
+            type: string
+            groups: [Detailed]

@@ -1,0 +1,4 @@
+videni_rest:
+    resource: .
+    type: videni_rest
+    prefix: /api
