@@ -39,9 +39,16 @@ services:
     App\Routing\ResourceRouteLoader:
         arguments:
             - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+            - '@App\Routing\PathResolver\OperationPathResolver'
             - 'App\Action\PlaceholderAction'
             - '%simple_rest.resource_class_directories%'
         tags: [ 'routing.loader' ]
+
+    App\Routing\PathResolver\OperationPathResolver:
+        arguments:
+            - '@App\Operation\UnderscorePathSegmentNameGenerator'
+
+    App\Operation\UnderscorePathSegmentNameGenerator: ~
 
     App\Action\PlaceholderAction:
         public: true

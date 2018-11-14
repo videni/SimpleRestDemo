@@ -8,6 +8,7 @@ namespace App\Routing;
 use App\Exception\InvalidResourceException;
 use App\Metadata\Resource\Factory\ResourceMetadataFactoryInterface;
 use App\Metadata\Resource\ResourceMetadata;
+use App\Operation\OperationType;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Config\Resource\DirectoryResource;
@@ -16,6 +17,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Loader\XmlFileLoader;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
+use App\Routing\PathResolver\OperationPathResolverInterface;
 
 /**
  * Loads Resources.
@@ -25,15 +27,18 @@ final class ResourceRouteLoader extends Loader
     const ROUTE_NAME_PREFIX = 'api_';
 
     private $resourceMetadataFactory;
+    private $operationPathResolver;
     private $resourceClassDirectories;
     private $placeholderAction;
 
     public function __construct(
         ResourceMetadataFactoryInterface $resourceMetadataFactory,
+        OperationPathResolverInterface $operationPathResolver,
         string $placeholderAction,
         array $resourceClassDirectories = []
     ) {
         $this->resourceMetadataFactory = $resourceMetadataFactory;
+        $this->operationPathResolver = $operationPathResolver;
         $this->placeholderAction = $placeholderAction;
         $this->resourceClassDirectories = $resourceClassDirectories;
     }
@@ -55,11 +60,18 @@ final class ResourceRouteLoader extends Loader
                 throw new InvalidResourceException(sprintf('Resource %s has no short name defined.', $resourceClass));
             }
 
-            if (null !== $operations = $resourceMetadata->getOperations()) {
-                foreach ($operations as $operationName => $operation) {
-                    $this->addRoute($routeCollection, $resourceClass, $operationName, $operation, $resourceMetadata);
+            if (null !== $collectionOperations = $resourceMetadata->getCollectionOperations()) {
+                foreach ($collectionOperations as $operationName => $operation) {
+                    $this->addRoute($routeCollection, $resourceClass, $operationName, $operation, $resourceMetadata, OperationType::COLLECTION);
                 }
             }
+
+            if (null !== $itemOperations = $resourceMetadata->getItemOperations()) {
+                foreach ($itemOperations as $operationName => $operation) {
+                    $this->addRoute($routeCollection, $resourceClass, $operationName, $operation, $resourceMetadata, OperationType::ITEM);
+                }
+            }
+
         }
 
         return $routeCollection;
@@ -78,7 +90,7 @@ final class ResourceRouteLoader extends Loader
      *
      * @throws RuntimeException
      */
-    private function addRoute(RouteCollection $routeCollection, string $resourceClass, string $operationName, array $operation, ResourceMetadata $resourceMetadata)
+    private function addRoute(RouteCollection $routeCollection, string $resourceClass, string $operationName, array $operation, ResourceMetadata $resourceMetadata, string $operationType)
     {
         $resourceShortName = $resourceMetadata->getShortName();
 
@@ -95,7 +107,7 @@ final class ResourceRouteLoader extends Loader
         }
 
         $path = trim(trim($resourceMetadata->getAttribute('route_prefix', '')), '/');
-        $path .= $operation['path'];
+        $path .= $this->operationPathResolver->resolveOperationPath($resourceShortName, $operation, $operationType, $operationName);
 
         $route = new Route(
             $path,
@@ -103,7 +115,7 @@ final class ResourceRouteLoader extends Loader
                 '_controller' => $controller,
                 '_format' => null,
                 '_api_resource_class' => $resourceClass,
-                '_api_operation_name' => $operationName,
+                sprintf('_api_%s_operation_name', $operationType) => $operationName,
             ] + ($operation['defaults'] ?? []),
             $operation['requirements'] ?? [],
             $operation['options'] ?? [],
@@ -113,6 +125,6 @@ final class ResourceRouteLoader extends Loader
             $operation['condition'] ?? ''
         );
 
-        $routeCollection->add(RouteNameGenerator::generate($operationName, $resourceShortName), $route);
+        $routeCollection->add(RouteNameGenerator::generate($operationName, $resourceShortName, $operationType), $route);
     }
 }

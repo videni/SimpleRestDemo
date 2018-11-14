@@ -11,14 +11,21 @@ final class ResourceMetadata implements \Serializable
 {
     private $shortName;
     private $description;
-    private $operations;
+    private $collectionOperations;
+    private $itemOperations;
     private $attributes;
 
-    public function __construct(string $shortName = null, string $description = null, array $operations, array $attributes = null)
-    {
+    public function __construct(
+        string $shortName = null,
+        string $description = null,
+        array $itemOperations = null,
+        array $collectionOperations = null,
+        array $attributes = null
+    ) {
         $this->shortName = $shortName;
         $this->description = $description;
-        $this->operations = $operations;
+        $this->collectionOperations = $collectionOperations;
+        $this->itemOperations = $itemOperations;
         $this->attributes = $attributes;
     }
 
@@ -47,18 +54,44 @@ final class ResourceMetadata implements \Serializable
      *
      * @return array|null
      */
-    public function getOperations()
+    public function getItemOperations()
     {
-        return $this->operations;
+        return $this->itemOperations;
     }
 
     /**
+     * Gets collection operations.
+     *
+     * @return array|null
+     */
+    public function getCollectionOperations()
+    {
+        return $this->collectionOperations;
+    }
+
+    /**
+     * Gets a collection operation attribute, optionally fallback to a resource attribute.
+     */
+    public function getCollectionOperationAttribute(string $operationName = null, string $key, $defaultValue = null, bool $resourceFallback = false)
+    {
+        return $this->findOperationAttribute($this->collectionOperations, $operationName, $key, $defaultValue, $resourceFallback);
+    }
+
+    /**
+     * Gets an item operation attribute, optionally fallback to a resource attribute.
+     */
+    public function getItemOperationAttribute(string $operationName = null, string $key, $defaultValue = null, bool $resourceFallback = false)
+    {
+        return $this->findOperationAttribute($this->itemOperations, $operationName, $key, $defaultValue, $resourceFallback);
+    }
+
+     /**
      * Gets an operation attribute, optionally fallback to a resource attribute.
      */
-    private function getOperationAttribute(array $operations = null, string $operationName = null, string $key, $defaultValue = null, bool $resourceFallback = false)
+    private function findOperationAttribute(array $operations = null, string $operationName = null, string $key, $defaultValue = null, bool $resourceFallback = false)
     {
-        if (null !== $operationName && isset($this->operations[$operationName][$key])) {
-            return $this->operations[$operationName][$key];
+        if (null !== $operationName && isset($operations[$operationName][$key])) {
+            return $operations[$operationName][$key];
         }
 
         if ($resourceFallback && isset($this->attributes[$key])) {
@@ -107,7 +140,8 @@ final class ResourceMetadata implements \Serializable
         return serialize(array(
         $this->shortName,
         $this->description,
-        $this->operations,
+        $this->collectionOperations,
+        $this->itemOperations,
         $this->attributes
         ));
     }
@@ -117,7 +151,8 @@ final class ResourceMetadata implements \Serializable
         list(
         $this->shortName,
         $this->description,
-        $this->operations,
+        $this->collectionOperations,
+        $this->itemOperations,
         $this->attributes
         ) = unserialize($str);
     }

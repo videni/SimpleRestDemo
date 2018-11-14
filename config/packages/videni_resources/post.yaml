@@ -1,0 +1,8 @@
+App\Enity\Post:
+  attributes:
+        normalization_context:
+             groups: ['read']
+        denormalization_context:
+           groups: ['write']
+        validation_groups:  ['pintushi']
+        route_prefix: /admin

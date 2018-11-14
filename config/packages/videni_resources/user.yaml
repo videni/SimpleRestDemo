@@ -1,32 +1,33 @@
 App\Enity\User:
-  operations:
-    create_user:
-        path: '/users'
-        methods: ['POST']
-        normalization_context:
-               groups: ['read']
-        denormalization_context:
-             groups: ['write']
-        validation_groups:  ['pintushi']
-    get_user:
-        path: '/users/{id}'
-        methods: ['GET']
-    update_user:
-        path: '/users'
-        methods: ['put']
-        normalization_context:
-               groups: ['read']
-        denormalization_context:
-             groups: ['write']
-        validation_groups:  ['pintushi']
-    get_users:
-        path: '/users'
-        methods: ['GET']
-        grid: 'app_user_grid'
-    delete_user:
-        path: '/users/{id}'
-        methods: ['GET']
-  attributes:
+    collectionOperations:
+        create_user:
+            path: '/users'
+            methods: ['POST']
+            normalization_context:
+                   groups: ['read']
+            denormalization_context:
+                 groups: ['write']
+            validation_groups:  ['pintushi']
+        get_users:
+            path: '/users'
+            methods: ['GET']
+            grid: 'app_user_grid'
+    itemOperations:
+        get_user:
+            path: '/users/{id}'
+            methods: ['GET']
+        update_user:
+            path: '/users/{id}'
+            methods: ['put']
+            normalization_context:
+                   groups: ['read']
+            denormalization_context:
+                 groups: ['write']
+            validation_groups:  ['pintushi']
+        delete_user:
+            path: '/users/{id}'
+            methods: ['GET']
+    attributes:
         normalization_context:
              groups: ['read']
         denormalization_context:
