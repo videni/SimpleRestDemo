@@ -6,7 +6,7 @@ This project is a craft demo for my custom RESTfull API choices, it can help you
 
 * CRUD
 * Swagger Doc
-* API version
+* API version(JMS serializer)
 * Deserialization
 * HAL
 * Grid

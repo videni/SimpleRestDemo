@@ -1,8 +1,29 @@
 App\Enity\Post:
-  attributes:
-        normalization_context:
-             groups: ['read']
+    attributes:
         denormalization_context:
-           groups: ['write']
-        validation_groups:  ['pintushi']
+            groups: [write]
+        normalization_context:
+            groups: [read]
         route_prefix: /admin
+        validation_groups: [simple_rest]
+    collectionOperations:
+        post:
+            denormalization_context:
+                groups: [write]
+            methods: [POST]
+            normalization_context:
+                groups: [read]
+            validation_groups: [simple_rest]
+        get:
+            grid: app_comment_grid
+            methods: [GET]
+    itemOperations:
+        delete:
+            methods: [DELETE]
+        put:
+            denormalization_context:
+                groups: [write]
+            methods: [PUT]
+            normalization_context:
+                groups: [read]
+            validation_groups: [simple_rest]

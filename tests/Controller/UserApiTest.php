@@ -10,7 +10,7 @@ use App\Entity\User;
 
 class UserApiTest extends JsonApiTestCase
 {
-   use UserJwtTokenTrait;
+   use JwtTokenTrait, CommandRunnerTrait;
 
     /**
      * @test

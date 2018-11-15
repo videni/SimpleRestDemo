@@ -1,0 +1,17 @@
+services:
+    App\Provider\FormatsProvider:
+        arguments:
+            - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+            - '%simple_rest.formats%'
+
+    App\Serializer\SerializerContextBuilder:
+        arguments:
+            - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+
+    App\EventListener\DeserializeListener:
+        arguments:
+            - '@jms_serializer'
+            - '@App\Provider\FormatsProvider'
+            - '@App\Serializer\SerializerContextBuilder'
+        tags:
+            - { name: 'kernel.event_listener', event: 'kernel.request', priority: 2 }

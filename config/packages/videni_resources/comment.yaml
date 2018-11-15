@@ -5,7 +5,7 @@ App\Enity\Comment:
         normalization_context:
             groups: [read]
         route_prefix: /admin
-        validation_groups: [pintushi]
+        validation_groups: [simple_rest]
     collectionOperations:
         create_comment:
             denormalization_context:
@@ -14,12 +14,12 @@ App\Enity\Comment:
             methods: [POST]
             normalization_context:
                 groups: [read]
-            path: /comments/{postId}
-            validation_groups: [pintushi]
+            path: /posts/{postId}/comments
+            validation_groups: [simple_rest]
         get_comments:
             grid: app_comment_grid
             methods: [GET]
-            path: /comments
+            path: /posts/{postId}/comments
     itemOperations:
         delete_comment:
             methods: [GET]
@@ -27,8 +27,7 @@ App\Enity\Comment:
         update_comment:
             denormalization_context:
                 groups: [write]
-            methods: [PUT]
+            methods: [PUT, POST]
             normalization_context:
                 groups: [read]
-            path: /comments
-            validation_groups: [pintushi]
+            validation_groups: [simple_rest]

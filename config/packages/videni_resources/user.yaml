@@ -7,7 +7,7 @@ App\Enity\User:
                    groups: ['read']
             denormalization_context:
                  groups: ['write']
-            validation_groups:  ['pintushi']
+            validation_groups:  ['simple_rest']
         get_users:
             path: '/users'
             methods: ['GET']
@@ -23,7 +23,7 @@ App\Enity\User:
                    groups: ['read']
             denormalization_context:
                  groups: ['write']
-            validation_groups:  ['pintushi']
+            validation_groups:  ['simple_rest']
         delete_user:
             path: '/users/{id}'
             methods: ['GET']
@@ -32,5 +32,5 @@ App\Enity\User:
              groups: ['read']
         denormalization_context:
            groups: ['write']
-        validation_groups:  ['pintushi']
+        validation_groups:  ['simple_rest']
         route_prefix: /admin

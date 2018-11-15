@@ -25,10 +25,6 @@ final class OperationPathResolver implements OperationPathResolverInterface
      */
     public function resolveOperationPath(string $resourceShortName, array $operation, $operationType, string $operationName = null): string
     {
-        if (OperationType::SUBRESOURCE === $operationType) {
-            throw new InvalidArgumentException('Subresource operations are not supported by the OperationPathResolver.');
-        }
-
         if (isset($operation['path'])) {
             return $operation['path'];
         }

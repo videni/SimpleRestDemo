@@ -10,7 +10,14 @@ imports:
 parameters:
     simple_rest.resource_class_directories:
         - "%kernel.project_dir%/config/packages/videni_resources"
-
+    locale: 'en'
+    simple_rest.formats:
+        json:
+            mime_types: ['application/json']
+        jsonhal:
+            mime_types: ['application/hal+json']
+        html:
+            mime_types: ['text/html']
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -88,3 +95,25 @@ services:
         parent: "cache.system"
         tags: [ "cache.pool" ]
 
+    App\Faker\EntityProvider:
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: 'nelmio_alice.faker.provider' }
+
+    App\Provider\FormatsProvider:
+        arguments:
+            - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+            - '%simple_rest.formats%'
+
+    App\Serializer\SerializerContextBuilder:
+        arguments:
+            - '@App\Metadata\Resource\Factory\ResourceMetadataFactory'
+
+    App\EventListener\DeserializeListener:
+        arguments:
+            - '@jms_serializer'
+            - '@App\Provider\FormatsProvider'
+            - '@App\Serializer\SerializerContextBuilder'
+        tags:
+            - { name: 'kernel.event_listener', event: 'kernel.request', priority: 2 }
