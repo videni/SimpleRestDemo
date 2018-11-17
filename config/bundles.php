@@ -13,4 +13,8 @@ return [
     Fidry\AliceDataFixtures\Bridge\Symfony\FidryAliceDataFixturesBundle::class => ['dev' => true, 'test' => true],
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
+    App\Bundle\RestBundle\AppRestBundle::class => ['all' => true],
+    // Oro\Bundle\ApiBundle\OroApiBundle::class => ['all' => true],
+    // FOS\RestBundle\FOSRestBundle::class => ['all' => true],
+    // Nelmio\ApiDocBundle\NelmioApiDocBundle::class => ['all' => true],
 ];

@@ -1,4 +1,4 @@
-App\Enity\User:
+App\Entity\User:
     collectionOperations:
         create_user:
             path: '/users'

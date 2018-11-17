@@ -1,4 +1,4 @@
-App\Enity\Post:
+App\Entity\Post:
     attributes:
         denormalization_context:
             groups: [write]

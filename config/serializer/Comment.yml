@@ -1,0 +1,17 @@
+App\Entity\Comment:
+    exclusion_policy: ALL
+    xml_root_name: comment
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+            groups: [read, write]
+        content:
+            expose: true
+            type: string
+            groups: [read, write]
+        publishedAt:
+            expose: true
+            type: dateTime
+            groups: [read, write]

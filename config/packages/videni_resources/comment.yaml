@@ -1,4 +1,4 @@
-App\Enity\Comment:
+App\Entity\Comment:
     attributes:
         denormalization_context:
             groups: [write]
@@ -10,7 +10,10 @@ App\Enity\Comment:
         create_comment:
             denormalization_context:
                 groups: [write]
-            factory: '@app_factory_comment->create($postId)'
+            factory:
+                id: 'simple_rest.resource_factory.comment'
+                method: createByPostId
+                arguments: [$postId]
             methods: [POST]
             normalization_context:
                 groups: [read]
