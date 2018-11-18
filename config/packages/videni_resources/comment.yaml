@@ -6,31 +6,35 @@ App\Entity\Comment:
             groups: [read]
         route_prefix: /admin
         validation_groups: [simple_rest]
-    collectionOperations:
+    operations:
         create_comment:
             denormalization_context:
                 groups: [write]
             factory:
-                id: 'simple_rest.resource_factory.comment'
                 method: createByPostId
                 arguments: [$postId]
-            methods: [POST]
+            action: create
+            methods: ['POST']
             normalization_context:
                 groups: [read]
             path: /posts/{postId}/comments
             validation_groups: [simple_rest]
+            access_control: is_granted('simple_rest_comment_create')
         get_comments:
             grid: app_comment_grid
-            methods: [GET]
+            action: index
+            methods: ['POST', 'GET']
             path: /posts/{postId}/comments
-    itemOperations:
+            access_control: is_granted('simple_rest_comment_view')
         delete_comment:
-            methods: [GET]
+            action: delete
             path: /comments/{id}
+            access_control: is_granted('simple_rest_comment_delete', $object)
         update_comment:
             denormalization_context:
                 groups: [write]
-            methods: [PUT, POST]
+            action: update
             normalization_context:
                 groups: [read]
             validation_groups: [simple_rest]
+            access_control: is_granted('simple_rest_comment_update', $object)

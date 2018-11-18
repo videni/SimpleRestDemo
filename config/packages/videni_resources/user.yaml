@@ -1,8 +1,8 @@
 App\Entity\User:
-    collectionOperations:
+    operations:
         create_user:
             path: '/users'
-            methods: ['POST']
+            action: create
             normalization_context:
                    groups: ['read']
             denormalization_context:
@@ -10,23 +10,22 @@ App\Entity\User:
             validation_groups:  ['simple_rest']
         get_users:
             path: '/users'
-            methods: ['GET']
+            action: index
             grid: 'app_user_grid'
-    itemOperations:
         get_user:
             path: '/users/{id}'
-            methods: ['GET']
+            action: view
         update_user:
             path: '/users/{id}'
-            methods: ['put']
+            action: update
             normalization_context:
                    groups: ['read']
             denormalization_context:
-                 groups: ['write']
+                 groups: update
             validation_groups:  ['simple_rest']
         delete_user:
             path: '/users/{id}'
-            methods: ['GET']
+            action: delete
     attributes:
         normalization_context:
              groups: ['read']

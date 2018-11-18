@@ -6,24 +6,23 @@ App\Entity\Post:
             groups: [read]
         route_prefix: /admin
         validation_groups: [simple_rest]
-    collectionOperations:
+    operations:
         post:
             denormalization_context:
                 groups: [write]
-            methods: [POST]
+            action: create
             normalization_context:
                 groups: [read]
             validation_groups: [simple_rest]
         get:
             grid: app_comment_grid
-            methods: [GET]
-    itemOperations:
+            action: index
         delete:
-            methods: [DELETE]
+            action: [DELETE]
         put:
             denormalization_context:
                 groups: [write]
-            methods: [PUT]
+            action: update
             normalization_context:
                 groups: [read]
             validation_groups: [simple_rest]

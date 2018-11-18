@@ -17,7 +17,6 @@
         "willdurand/hateoas-bundle": "^1.4",
         "oro/api-bundle": "^1.0@dev",
         "friendsofsymfony/rest-bundle": "^2.4",
-        "nelmio/api-doc-bundle": "^3.3",
         "oro/chain-processor": "^1.0@dev",
         "oro/config": "^1.0@dev",
         "oro/property-access": "^1.0@dev",
