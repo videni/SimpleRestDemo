@@ -1,0 +1,2 @@
+imports:
+    - {  resource: '@AppRestBundle/Resources/config/app/config.yaml'}

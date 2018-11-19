@@ -46,6 +46,6 @@ EOT;
         );
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'user/create_comment_response', Response::HTTP_OK);
+        $this->assertResponse($response, 'comment/create_comment_response', Response::HTTP_OK);
     }
 }

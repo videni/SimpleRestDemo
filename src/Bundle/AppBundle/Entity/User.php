@@ -16,7 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="App\Bundle\AppBundle\Repository\UserRepository")
  * @ORM\Table(name="symfony_demo_user")
  *
  * Defines the properties of the User entity to represent the application users.

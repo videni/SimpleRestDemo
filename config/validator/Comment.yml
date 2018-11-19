@@ -1,0 +1,6 @@
+App\Bundle\AppBundle\Entity\Comment:
+    properties:
+        content:
+            - NotBlank: { groups: ["app_rest"]}
+        publishedAt:
+            - NotBlank: { groups: ["app_rest"]}

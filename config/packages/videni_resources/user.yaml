@@ -1,4 +1,4 @@
-App\Entity\User:
+App\Bundle\AppBundle\Entity\User:
     operations:
         create_user:
             path: '/users'
@@ -7,7 +7,7 @@ App\Entity\User:
                    groups: ['read']
             denormalization_context:
                  groups: ['write']
-            validation_groups:  ['simple_rest']
+            validation_groups:  ['app_rest']
         get_users:
             path: '/users'
             action: index
@@ -22,7 +22,7 @@ App\Entity\User:
                    groups: ['read']
             denormalization_context:
                  groups: update
-            validation_groups:  ['simple_rest']
+            validation_groups:  ['app_rest']
         delete_user:
             path: '/users/{id}'
             action: delete
@@ -31,5 +31,5 @@ App\Entity\User:
              groups: ['read']
         denormalization_context:
            groups: ['write']
-        validation_groups:  ['simple_rest']
+        validation_groups:  ['app_rest']
         route_prefix: /admin

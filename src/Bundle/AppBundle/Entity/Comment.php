@@ -50,7 +50,6 @@ class Comment
      * @var string
      *
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(message="comment.blank")
      * @Assert\Length(
      *     min=5,
      *     minMessage="comment.too_short",
@@ -70,7 +69,7 @@ class Comment
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\ManyToOne(targetEntity="App\Bundle\AppBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;

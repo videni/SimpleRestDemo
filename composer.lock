@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47a70e9d9fb73c6b5c2a41f1fc1ab952",
+    "content-hash": "1a8fac9503310257a905767a1d17c249",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -300,85 +300,6 @@
             "time": "2018-07-12T21:16:12+00:00"
         },
         {
-            "name": "doctrine/dbal",
-            "version": "v2.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5140a64c08b4b607b9bedaae0cedd26f04a0e621",
-                "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/cache": "^1.0",
-                "doctrine/event-manager": "^1.0",
-                "ext-pdo": "*",
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^4.0",
-                "jetbrains/phpstorm-stubs": "^2018.1.2",
-                "phpstan/phpstan": "^0.10.1",
-                "phpunit/phpunit": "^7.1.2",
-                "phpunit/phpunit-mock-objects": "!=3.2.4,!=3.2.5",
-                "symfony/console": "^2.0.5|^3.0|^4.0",
-                "symfony/phpunit-bridge": "^3.4.5|^4.0.5"
-            },
-            "suggest": {
-                "symfony/console": "For helpful console commands such as SQL execution and import of files."
-            },
-            "bin": [
-                "bin/doctrine-dbal"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8.x-dev",
-                    "dev-develop": "3.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\DBAL\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                }
-            ],
-            "description": "Database Abstraction Layer",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database",
-                "dbal",
-                "persistence",
-                "queryobject"
-            ],
-            "time": "2018-07-13T03:16:35+00:00"
-        },
-        {
             "name": "doctrine/event-manager",
             "version": "v1.0.0",
             "source": {
@@ -626,88 +547,6 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
-        },
-        {
-            "name": "doctrine/orm",
-            "version": "v2.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "d2b4dd71d2a276edd65d0c170375b445f8a4a4a8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/d2b4dd71d2a276edd65d0c170375b445f8a4a4a8",
-                "reference": "d2b4dd71d2a276edd65d0c170375b445f8a4a4a8",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "~1.5",
-                "doctrine/cache": "~1.6",
-                "doctrine/collections": "^1.4",
-                "doctrine/common": "^2.7.1",
-                "doctrine/dbal": "^2.6",
-                "doctrine/instantiator": "~1.1",
-                "ext-pdo": "*",
-                "php": "^7.1",
-                "symfony/console": "~3.0|~4.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^1.0",
-                "phpunit/phpunit": "^6.5",
-                "squizlabs/php_codesniffer": "^3.2",
-                "symfony/yaml": "~3.4|~4.0"
-            },
-            "suggest": {
-                "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
-            },
-            "bin": [
-                "bin/doctrine"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\ORM\\": "lib/Doctrine/ORM"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Object-Relational-Mapper for PHP",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database",
-                "orm"
-            ],
-            "time": "2018-07-12T20:47:13+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -1489,72 +1328,23 @@
             "time": "2017-12-11T18:41:54+00:00"
         },
         {
-            "name": "oro/api-bundle",
-            "version": "dev-master",
-            "target-dir": "Oro/Bundle/ApiBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/videni/ApiBundle.git",
-                "reference": "254035f3df7a06a09654645ebca0f9f985e9a224"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/videni/ApiBundle/zipball/254035f3df7a06a09654645ebca0f9f985e9a224",
-                "reference": "254035f3df7a06a09654645ebca0f9f985e9a224",
-                "shasum": ""
-            },
-            "require": {
-                "oro/chain-processor": "^1.0@dev",
-                "oro/config": "^1.0@dev",
-                "php": ">=5.6"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Oro\\Bundle\\ApiBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "BAP API Bundle",
-            "homepage": "https://github.com/laboro/ApiBundle",
-            "keywords": [
-                "API",
-                "BAP",
-                "REST",
-                "SOAP"
-            ],
-            "support": {
-                "source": "https://github.com/videni/ApiBundle/tree/master"
-            },
-            "time": "2018-11-17T02:23:53+00:00"
-        },
-        {
             "name": "oro/chain-processor",
             "version": "dev-master",
             "target-dir": "Oro/Component/ChainProcessor",
             "source": {
                 "type": "git",
                 "url": "https://github.com/videni/ChainProcessor.git",
-                "reference": "34c15451537d2187013086a9212258d86d6de242"
+                "reference": "9b805775a85b14027a84372805c4c0511b48c009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/videni/ChainProcessor/zipball/34c15451537d2187013086a9212258d86d6de242",
-                "reference": "34c15451537d2187013086a9212258d86d6de242",
+                "url": "https://api.github.com/repos/videni/ChainProcessor/zipball/9b805775a85b14027a84372805c4c0511b48c009",
+                "reference": "9b805775a85b14027a84372805c4c0511b48c009",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "symfony/dependency-injection": "2.8.*"
+                "php": "7.1.*",
+                "symfony/dependency-injection": "2.8.*|^4.0"
             },
             "type": "library",
             "extra": {
@@ -1579,205 +1369,7 @@
             "support": {
                 "source": "https://github.com/videni/ChainProcessor/tree/master"
             },
-            "time": "2016-11-25T17:17:32+00:00"
-        },
-        {
-            "name": "oro/config",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/videni/Config.git",
-                "reference": "2348657c9d5a1fac615fa3998b80f48208304275"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/videni/Config/zipball/2348657c9d5a1fac615fa3998b80f48208304275",
-                "reference": "2348657c9d5a1fac615fa3998b80f48208304275",
-                "shasum": ""
-            },
-            "require": {
-                "oro/property-access": "1.x-dev",
-                "php": ">=5.6",
-                "symfony/config": "^2.8|^4.0",
-                "symfony/dependency-injection": "^2.8|^4.0",
-                "symfony/yaml": "^2.8|^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Oro\\Component\\Config\\": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "ORO Config Component",
-            "keywords": [
-                "BAP",
-                "Config",
-                "ORO"
-            ],
-            "support": {
-                "source": "https://github.com/videni/Config/tree/master"
-            },
-            "time": "2018-11-17T01:47:52+00:00"
-        },
-        {
-            "name": "oro/doctrine-utils",
-            "version": "dev-master",
-            "target-dir": "Oro/Component/DoctrineUtils",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/videni/DoctrineUtils.git",
-                "reference": "491b0b5390feefa686e145bcea40023b39675647"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/videni/DoctrineUtils/zipball/491b0b5390feefa686e145bcea40023b39675647",
-                "reference": "491b0b5390feefa686e145bcea40023b39675647",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": "^2.5",
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Oro\\Component\\DoctrineUtils": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "ORO Doctrine Utils Component",
-            "keywords": [
-                "BAP",
-                "DBAL",
-                "Doctrine",
-                "Entity",
-                "ORM",
-                "ORO",
-                "Util",
-                "Utils"
-            ],
-            "support": {
-                "source": "https://github.com/videni/DoctrineUtils/tree/master"
-            },
-            "time": "2018-11-17T02:29:01+00:00"
-        },
-        {
-            "name": "oro/entity-serializer",
-            "version": "dev-master",
-            "target-dir": "Oro/Component/EntitySerializer",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/videni/EntitySerializer.git",
-                "reference": "702f19116590603aa63a785b32183118ea26dbb9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/videni/EntitySerializer/zipball/702f19116590603aa63a785b32183118ea26dbb9",
-                "reference": "702f19116590603aa63a785b32183118ea26dbb9",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": "^2.5",
-                "doctrine/orm": "^2.5",
-                "oro/doctrine-utils": "^1.0@dev",
-                "php": ">=5.6",
-                "symfony/dependency-injection": "^2.8|^4.0",
-                "symfony/form": "^2.8|^4.0"
-            },
-            "require-dev": {
-                "oro/test-utils": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Oro\\Component\\EntitySerializer": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "ORO EntitySerializer Component",
-            "keywords": [
-                "BAP",
-                "Entity",
-                "ORO",
-                "Serializer"
-            ],
-            "support": {
-                "source": "https://github.com/videni/EntitySerializer/tree/master"
-            },
-            "time": "2018-11-17T02:29:54+00:00"
-        },
-        {
-            "name": "oro/property-access",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/videni/PropertyAccess.git",
-                "reference": "918888dda9e4432f4de3dcde16105d4595a3946a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/videni/PropertyAccess/zipball/918888dda9e4432f4de3dcde16105d4595a3946a",
-                "reference": "918888dda9e4432f4de3dcde16105d4595a3946a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6",
-                "symfony/property-access": "^2.8|^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Oro\\Component\\PropertyAccess\\": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Oro Property Access Component",
-            "keywords": [
-                "BAP",
-                "ORO",
-                "access",
-                "array",
-                "extraction",
-                "index",
-                "injection",
-                "object",
-                "property",
-                "property path",
-                "reflection"
-            ],
-            "support": {
-                "source": "https://github.com/videni/PropertyAccess/tree/master"
-            },
-            "time": "2018-11-17T01:50:48+00:00"
+            "time": "2018-11-18T08:46:03+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2711,87 +2303,6 @@
             "time": "2018-11-15T06:11:38+00:00"
         },
         {
-            "name": "symfony/form",
-            "version": "v4.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/form.git",
-                "reference": "c686aef2f1ef79896496982ad65a6eab4110c1e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/c686aef2f1ef79896496982ad65a6eab4110c1e0",
-                "reference": "c686aef2f1ef79896496982ad65a6eab4110c1e0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/event-dispatcher": "~3.4|~4.0",
-                "symfony/intl": "~3.4|~4.0",
-                "symfony/options-resolver": "~3.4|~4.0",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/property-access": "~3.4|~4.0"
-            },
-            "conflict": {
-                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
-                "symfony/dependency-injection": "<3.4",
-                "symfony/doctrine-bridge": "<3.4",
-                "symfony/framework-bundle": "<3.4",
-                "symfony/http-kernel": "<3.4",
-                "symfony/twig-bridge": "<3.4.5|<4.0.5,>=4.0"
-            },
-            "require-dev": {
-                "doctrine/collections": "~1.0",
-                "symfony/config": "~3.4|~4.0",
-                "symfony/console": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/http-foundation": "~3.4|~4.0",
-                "symfony/http-kernel": "~3.4|~4.0",
-                "symfony/security-csrf": "~3.4|~4.0",
-                "symfony/translation": "~3.4|~4.0",
-                "symfony/validator": "~3.4|~4.0",
-                "symfony/var-dumper": "~3.4|~4.0"
-            },
-            "suggest": {
-                "symfony/framework-bundle": "For templating with PHP.",
-                "symfony/security-csrf": "For protecting forms against CSRF attacks.",
-                "symfony/twig-bridge": "For templating with Twig.",
-                "symfony/validator": "For form validation."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Form\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Form Component",
-            "homepage": "https://symfony.com",
-            "time": "2018-10-30T17:00:46+00:00"
-        },
-        {
             "name": "symfony/framework-bundle",
             "version": "v4.1.7",
             "source": {
@@ -3106,193 +2617,6 @@
                 "words"
             ],
             "time": "2018-07-26T08:55:25+00:00"
-        },
-        {
-            "name": "symfony/intl",
-            "version": "v4.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/intl.git",
-                "reference": "61f4a460d12ef20abfd6a8d80f3b19b6997fdf28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/61f4a460d12ef20abfd6a8d80f3b19b6997fdf28",
-                "reference": "61f4a460d12ef20abfd6a8d80f3b19b6997fdf28",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/polyfill-intl-icu": "~1.0"
-            },
-            "require-dev": {
-                "symfony/filesystem": "~3.4|~4.0"
-            },
-            "suggest": {
-                "ext-intl": "to use the component with locales other than \"en\""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Intl\\": ""
-                },
-                "classmap": [
-                    "Resources/stubs"
-                ],
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                },
-                {
-                    "name": "Eriksen Costa",
-                    "email": "eriksen.costa@infranology.com.br"
-                },
-                {
-                    "name": "Igor Wiedler",
-                    "email": "igor@wiedler.ch"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "A PHP replacement layer for the C intl extension that includes additional data from the ICU library.",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "i18n",
-                "icu",
-                "internationalization",
-                "intl",
-                "l10n",
-                "localization"
-            ],
-            "time": "2018-10-31T09:30:44+00:00"
-        },
-        {
-            "name": "symfony/options-resolver",
-            "version": "v4.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "40f0e40d37c1c8a762334618dea597d64bbb75ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/40f0e40d37c1c8a762334618dea597d64bbb75ff",
-                "reference": "40f0e40d37c1c8a762334618dea597d64bbb75ff",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\OptionsResolver\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony OptionsResolver Component",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "config",
-                "configuration",
-                "options"
-            ],
-            "time": "2018-09-18T12:45:12+00:00"
-        },
-        {
-            "name": "symfony/polyfill-intl-icu",
-            "version": "v1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "f22a90256d577c7ef7efad8df1f0201663d57644"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/f22a90256d577c7ef7efad8df1f0201663d57644",
-                "reference": "f22a90256d577c7ef7efad8df1f0201663d57644",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/intl": "~2.3|~3.0|~4.0"
-            },
-            "suggest": {
-                "ext-intl": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for intl's ICU-related data and classes",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "icu",
-                "intl",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -4315,6 +3639,85 @@
             "time": "2018-03-20T09:06:36+00:00"
         },
         {
+            "name": "doctrine/dbal",
+            "version": "v2.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/dbal.git",
+                "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5140a64c08b4b607b9bedaae0cedd26f04a0e621",
+                "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/cache": "^1.0",
+                "doctrine/event-manager": "^1.0",
+                "ext-pdo": "*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^4.0",
+                "jetbrains/phpstorm-stubs": "^2018.1.2",
+                "phpstan/phpstan": "^0.10.1",
+                "phpunit/phpunit": "^7.1.2",
+                "phpunit/phpunit-mock-objects": "!=3.2.4,!=3.2.5",
+                "symfony/console": "^2.0.5|^3.0|^4.0",
+                "symfony/phpunit-bridge": "^3.4.5|^4.0.5"
+            },
+            "suggest": {
+                "symfony/console": "For helpful console commands such as SQL execution and import of files."
+            },
+            "bin": [
+                "bin/doctrine-dbal"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8.x-dev",
+                    "dev-develop": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\DBAL\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Database Abstraction Layer",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "dbal",
+                "persistence",
+                "queryobject"
+            ],
+            "time": "2018-07-13T03:16:35+00:00"
+        },
+        {
             "name": "doctrine/doctrine-bundle",
             "version": "1.9.1",
             "source": {
@@ -4685,6 +4088,88 @@
                 "migrations"
             ],
             "time": "2018-06-06T21:00:30+00:00"
+        },
+        {
+            "name": "doctrine/orm",
+            "version": "v2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/doctrine2.git",
+                "reference": "d2b4dd71d2a276edd65d0c170375b445f8a4a4a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/d2b4dd71d2a276edd65d0c170375b445f8a4a4a8",
+                "reference": "d2b4dd71d2a276edd65d0c170375b445f8a4a4a8",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "~1.5",
+                "doctrine/cache": "~1.6",
+                "doctrine/collections": "^1.4",
+                "doctrine/common": "^2.7.1",
+                "doctrine/dbal": "^2.6",
+                "doctrine/instantiator": "~1.1",
+                "ext-pdo": "*",
+                "php": "^7.1",
+                "symfony/console": "~3.0|~4.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^1.0",
+                "phpunit/phpunit": "^6.5",
+                "squizlabs/php_codesniffer": "^3.2",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
+            },
+            "bin": [
+                "bin/doctrine"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\ORM\\": "lib/Doctrine/ORM"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "Object-Relational-Mapper for PHP",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "orm"
+            ],
+            "time": "2018-07-12T20:47:13+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -5159,34 +4644,33 @@
         },
         {
             "name": "ocramius/proxy-manager",
-            "version": "2.2.2",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "14b137b06b0f911944132df9d51e445a35920ab1"
+                "reference": "e18ac876b2e4819c76349de8f78ccc8ef1554cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/14b137b06b0f911944132df9d51e445a35920ab1",
-                "reference": "14b137b06b0f911944132df9d51e445a35920ab1",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/e18ac876b2e4819c76349de8f78ccc8ef1554cd7",
+                "reference": "e18ac876b2e4819c76349de8f78ccc8ef1554cd7",
                 "shasum": ""
             },
             "require": {
-                "ocramius/package-versions": "^1.1.3",
-                "php": "^7.2.0",
-                "zendframework/zend-code": "^3.3.0"
+                "ocramius/package-versions": "^1.1.1",
+                "php": "^7.1.0",
+                "zendframework/zend-code": "^3.1.0"
             },
             "require-dev": {
-                "couscous/couscous": "^1.6.1",
+                "couscous/couscous": "^1.5.2",
                 "ext-phar": "*",
-                "humbug/humbug": "1.0.0-RC.0@RC",
-                "nikic/php-parser": "^3.1.1",
-                "padraic/phpunit-accelerator": "dev-master@DEV",
+                "humbug/humbug": "dev-master@DEV",
+                "nikic/php-parser": "^3.0.4",
                 "phpbench/phpbench": "^0.12.2",
-                "phpstan/phpstan": "dev-master#856eb10a81c1d27c701a83f167dc870fd8f4236a as 0.9.999",
-                "phpstan/phpstan-phpunit": "dev-master#5629c0a1f4a9c417cb1077cf6693ad9753895761",
-                "phpunit/phpunit": "^6.4.3",
-                "squizlabs/php_codesniffer": "^2.9.1"
+                "phpstan/phpstan": "^0.6.4",
+                "phpunit/phpunit": "^5.6.4",
+                "phpunit/phpunit-mock-objects": "^3.4.1",
+                "squizlabs/php_codesniffer": "^2.7.0"
             },
             "suggest": {
                 "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
@@ -5225,7 +4709,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2018-09-27T13:45:01+00:00"
+            "time": "2017-05-04T11:12:50+00:00"
         },
         {
             "name": "openlss/lib-array2xml",
@@ -7056,12 +6540,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "oro/api-bundle": 20,
-        "oro/chain-processor": 20,
-        "oro/config": 20,
-        "oro/property-access": 20,
-        "oro/entity-serializer": 20,
-        "oro/doctrine-utils": 20
+        "oro/chain-processor": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

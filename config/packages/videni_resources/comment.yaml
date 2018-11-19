@@ -1,11 +1,11 @@
-App\Entity\Comment:
+App\Bundle\AppBundle\Entity\Comment:
     attributes:
         denormalization_context:
             groups: [write]
         normalization_context:
             groups: [read]
         route_prefix: /admin
-        validation_groups: [simple_rest]
+        validation_groups: [app_rest]
     operations:
         create_comment:
             denormalization_context:
@@ -18,23 +18,23 @@ App\Entity\Comment:
             normalization_context:
                 groups: [read]
             path: /posts/{postId}/comments
-            validation_groups: [simple_rest]
-            access_control: is_granted('simple_rest_comment_create')
+            validation_groups: [app_rest]
+            access_control: is_granted('app_rest_comment_create')
         get_comments:
             grid: app_comment_grid
             action: index
             methods: ['POST', 'GET']
             path: /posts/{postId}/comments
-            access_control: is_granted('simple_rest_comment_view')
+            access_control: is_granted('app_rest_comment_view')
         delete_comment:
             action: delete
             path: /comments/{id}
-            access_control: is_granted('simple_rest_comment_delete', $object)
+            access_control: is_granted('app_rest_comment_delete', $object)
         update_comment:
             denormalization_context:
                 groups: [write]
             action: update
             normalization_context:
                 groups: [read]
-            validation_groups: [simple_rest]
-            access_control: is_granted('simple_rest_comment_update', $object)
+            validation_groups: [app_rest]
+            access_control: is_granted('app_rest_comment_update', $object)

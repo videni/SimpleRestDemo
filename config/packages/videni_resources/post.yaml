@@ -1,11 +1,11 @@
-App\Entity\Post:
+App\Bundle\AppBundle\Entity\Post:
     attributes:
         denormalization_context:
             groups: [write]
         normalization_context:
             groups: [read]
         route_prefix: /admin
-        validation_groups: [simple_rest]
+        validation_groups: [app_rest]
     operations:
         post:
             denormalization_context:
@@ -13,16 +13,16 @@ App\Entity\Post:
             action: create
             normalization_context:
                 groups: [read]
-            validation_groups: [simple_rest]
+            validation_groups: [app_rest]
         get:
             grid: app_comment_grid
             action: index
         delete:
-            action: [DELETE]
+            action: delete
         put:
             denormalization_context:
                 groups: [write]
             action: update
             normalization_context:
                 groups: [read]
-            validation_groups: [simple_rest]
+            validation_groups: [app_rest]

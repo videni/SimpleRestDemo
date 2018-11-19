@@ -1,8 +1,8 @@
-App\Entity\Post:
+App\Bundle\AppBundle\Entity\Post:
     post1:
         title: "<sentence()>"
         slug: "<slug()>"
         summary: "<paragraph()>"
         content: "<text()>"
         publishedAt: "<dateTime()>"
-        author: '<entity("App\Entity\User", "findOneByUsername", "jane_admin")>'
+        author: '<entity("App\Bundle\AppBundle\Entity\User", "findOneByUsername", "jane_admin")>'

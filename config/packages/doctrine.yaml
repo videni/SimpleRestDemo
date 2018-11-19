@@ -25,5 +25,5 @@ doctrine:
                 is_bundle: false
                 type: annotation
                 dir: '%kernel.project_dir%/src/Bundle/AppBundle/Entity'
-                prefix: 'App\Entity'
+                prefix: 'App\Bundle\AppBundle\Entity'
                 alias: App
