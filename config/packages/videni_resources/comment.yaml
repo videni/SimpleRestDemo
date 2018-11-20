@@ -37,3 +37,10 @@ App\Bundle\AppBundle\Entity\Comment:
                 groups: [read]
             validation_groups: [app_rest]
             access_control: is_granted('app_rest_comment_update', $object)
+        view_comment:
+            action: view
+            path: /comments/{id}
+            repository:
+                arguments: [id]
+            normalization_context:
+                groups: [read]

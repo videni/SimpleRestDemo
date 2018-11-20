@@ -1,6 +1,6 @@
 {
     "id": "@integer@",
-    "content": "What a wonderfull post!",
+    "content": "@string@",
     "published_at": "@string@",
     "_links": {
         "self": {

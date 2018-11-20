@@ -15,3 +15,11 @@ App\Bundle\AppBundle\Entity\Comment:
             expose: true
             type: DateTime<'Y-m-d H:i:s'>
             groups: [read, write]
+    relations:
+        - rel: self
+          href:
+            route: api_comments_view_comment
+            parameters:
+                id: expr(object.getId())
+          exclusion:
+            groups: [read]

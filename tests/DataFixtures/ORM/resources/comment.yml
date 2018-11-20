@@ -1,0 +1,6 @@
+App\Bundle\AppBundle\Entity\Comment:
+    comment1:
+        post: "@post1"
+        content: "<text()>"
+        publishedAt: "<dateTime()>"
+        author: '<entity("App\Bundle\AppBundle\Entity\User", "findOneByUsername", "jane_admin")>'
