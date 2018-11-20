@@ -19,7 +19,6 @@ App\Bundle\AppBundle\Entity\Comment:
                 groups: [read]
             path: /posts/{postId}/comments
             validation_groups: [app_rest]
-            access_control: is_granted('app_rest_comment_create')
         get_comments:
             grid: app_comment_grid
             action: index

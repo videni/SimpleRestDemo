@@ -18,7 +18,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\Bundle\AppBundle\:
         resource: '../src/Bundle/AppBundle/*'
-        exclude: '../src/Bundle/AppBundle//{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/Bundle/AppBundle//{DependencyInjection,Factory,Entity,Migrations,Tests,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
@@ -30,3 +30,13 @@ services:
     # please note that last definitions always *replace* previous ones
 
     oro.cache.abstract: "@doctrine_cache.abstract.chain"
+
+    App\Bundle\AppBundle\Factory\CommentFactory:
+        arguments:
+            - 'App\Bundle\AppBundle\Entity\Comment'
+            - '@App\Bundle\AppBundle\Repository\PostRepository'
+            - '@security.token_storage'
+
+    app_rest.factory.comment:
+        alias: 'App\Bundle\AppBundle\Factory\CommentFactory'
+        public: true

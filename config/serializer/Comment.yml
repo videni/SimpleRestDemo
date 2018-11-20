@@ -6,12 +6,12 @@ App\Bundle\AppBundle\Entity\Comment:
             expose: true
             type: integer
             xml_attribute: true
-            groups: [read, write]
+            groups: [read]
         content:
             expose: true
             type: string
             groups: [read, write]
         publishedAt:
             expose: true
-            type: dateTime
+            type: DateTime<'Y-m-d H:i:s'>
             groups: [read, write]
