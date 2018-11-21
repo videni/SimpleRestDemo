@@ -1,0 +1,10 @@
+{
+    "id": "@integer@",
+    "content": "What a wonderfull post!",
+    "published_at": "@string@",
+    "_links": {
+        "self": {
+            "href": "@string@.startsWith('/api/admin/comments')"
+        }
+    }
+}

@@ -28,7 +28,7 @@ App\Bundle\AppBundle\Entity\Comment:
         delete_comment:
             action: delete
             path: /comments/{id}
-            access_control: is_granted('app_rest_comment_delete', $object)
+            access_control: is_granted('app_rest_comment_delete', object)
         update_comment:
             denormalization_context:
                 groups: [write]
@@ -36,7 +36,6 @@ App\Bundle\AppBundle\Entity\Comment:
             normalization_context:
                 groups: [read]
             validation_groups: [app_rest]
-            access_control: is_granted('app_rest_comment_update', $object)
         view_comment:
             action: view
             path: /comments/{id}
