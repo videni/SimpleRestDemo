@@ -24,11 +24,9 @@ App\Bundle\AppBundle\Entity\Comment:
             action: index
             methods: ['POST', 'GET']
             path: /posts/{postId}/comments
-            access_control: is_granted('app_rest_comment_view')
         delete_comment:
             action: delete
             path: /comments/{id}
-            access_control: is_granted('app_rest_comment_delete', object)
         update_comment:
             denormalization_context:
                 groups: [write]

@@ -113,4 +113,31 @@ EOT;
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'comment/update_comment_response', Response::HTTP_OK);
     }
+
+    /**
+     * @test
+     */
+    public function it_allows_to_delete_comment()
+    {
+        $fixtures = $this->loadFixturesFromFiles([
+            'resources/post.yml',
+            'resources/comment.yml',
+        ]);
+
+        $this->client->setServerParameter('HTTP_Authorization', $this->getToken("jane_admin", "kitten"));
+
+        $this->client->request(
+            'DELETE',
+            sprintf('/api/admin/comments/%s', $fixtures['comment1']->getId()),
+            [],
+            [],
+            [
+                'HTTP_ACCEPT' => 'application/json',
+                'CONTENT_TYPE' => 'application/json'
+            ]
+        );
+
+        $response = $this->client->getResponse();
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+    }
 }
