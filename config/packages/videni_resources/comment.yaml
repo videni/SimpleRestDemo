@@ -20,7 +20,7 @@ App\Bundle\AppBundle\Entity\Comment:
             path: /posts/{postId}/comments
             validation_groups: [app_rest]
         get_comments:
-            grid: app_comment_grid
+            paginator: app_comment_grid
             action: index
             methods: ['POST', 'GET']
             path: /posts/{postId}/comments

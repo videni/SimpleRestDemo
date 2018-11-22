@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb5b6d5bd074bdfc09c07326450dc923",
+    "content-hash": "89137f73ba8e684b9b64f710da985df7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1370,6 +1370,52 @@
                 "source": "https://github.com/videni/ChainProcessor/tree/master"
             },
             "time": "2018-11-18T08:46:03+00:00"
+        },
+        {
+            "name": "oro/config",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/videni/Config.git",
+                "reference": "b20bb12a03d5c2d9a0bf6713a4945c9514e4a978"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/videni/Config/zipball/b20bb12a03d5c2d9a0bf6713a4945c9514e4a978",
+                "reference": "b20bb12a03d5c2d9a0bf6713a4945c9514e4a978",
+                "shasum": ""
+            },
+            "require": {
+                "php": "7.1.*",
+                "symfony/config": "2.8.*|^4.0",
+                "symfony/dependency-injection": "2.8.*|^4.0",
+                "symfony/property-access": "^4.0",
+                "symfony/yaml": "2.8.*|^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Oro\\Component\\Config\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "ORO Config Component",
+            "keywords": [
+                "BAP",
+                "Config",
+                "ORO"
+            ],
+            "support": {
+                "source": "https://github.com/videni/Config/tree/master"
+            },
+            "time": "2018-11-21T10:23:35+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -6540,7 +6586,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "oro/chain-processor": 20
+        "oro/chain-processor": 20,
+        "oro/config": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

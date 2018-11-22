@@ -16,6 +16,7 @@
         "symfony/framework-bundle": "4.1.*",
         "symfony/validator": "4.1.*",
         "symfony/yaml": "4.1.*",
+        "oro/config": "^1.0@dev",
         "willdurand/hateoas-bundle": "^1.4"
     },
     "require-dev": {
@@ -27,6 +28,10 @@
     "repositories": [
         {
             "url": "https://github.com/videni/ChainProcessor.git",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/videni/Config.git",
             "type": "vcs"
         }
     ],

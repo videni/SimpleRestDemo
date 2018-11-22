@@ -60,6 +60,13 @@ class Comment
     private $content;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(type="datetime")
@@ -132,5 +139,25 @@ class Comment
     public function setPost(?Post $post): void
     {
         $this->post = $post;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param bool $enabled
+     *
+     * @return self
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
     }
 }
