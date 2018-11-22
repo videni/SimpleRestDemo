@@ -9,12 +9,34 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
+use Oro\Component\Config\CumulativeResourceManager;
 
 class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
     const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function initializeBundles()
+    {
+        parent::initializeBundles();
+
+        // pass bundles to CumulativeResourceManager
+        $bundles = array();
+        foreach ($this->bundles as $name => $bundle) {
+            $bundles[$name] = get_class($bundle);
+        }
+
+        CumulativeResourceManager::getInstance()
+            ->setBundles($bundles)
+            ->setAppRootDir($this->rootDir)
+        ;
+
+        return $bundles;
+    }
 
     public function getCacheDir()
     {
