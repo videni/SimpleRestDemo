@@ -155,7 +155,7 @@ EOT;
 
         $this->client->request(
             'GET',
-            sprintf('/api/admin/posts/%s/comments', $fixtures['post1']),
+            sprintf('/api/admin/posts/%s/comments', $fixtures['post1']->getId()),
             [],
             [],
             [

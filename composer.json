@@ -17,6 +17,7 @@
         "symfony/validator": "4.1.*",
         "symfony/yaml": "4.1.*",
         "oro/config": "^1.0@dev",
+        "oro/doctrine-utils": "^1.0@dev",
         "willdurand/hateoas-bundle": "^1.4"
     },
     "require-dev": {
@@ -32,6 +33,10 @@
         },
         {
             "url": "https://github.com/videni/Config.git",
+            "type": "vcs"
+        },
+        {
+            "url": "https://github.com/videni/OroDoctrineUtils.git",
             "type": "vcs"
         }
     ],
