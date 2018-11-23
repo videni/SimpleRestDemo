@@ -64,7 +64,7 @@ class Comment
      *
      * @ORM\Column(type="boolean")
      */
-    private $enabled;
+    private $enabled = true;
 
     /**
      * @var \DateTime

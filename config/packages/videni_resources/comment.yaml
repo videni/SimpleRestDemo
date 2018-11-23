@@ -20,8 +20,11 @@ App\Bundle\AppBundle\Entity\Comment:
             path: /posts/{postId}/comments
             validation_groups: [app_rest]
         get_comments:
-            paginator: app_comment_grid
+            paginator: comment
             action: index
+            repository:
+                method: createQueryBuilderByPostId
+                arguments: [$postId]
             methods: ['POST', 'GET']
             path: /posts/{postId}/comments
         delete_comment:
@@ -38,6 +41,6 @@ App\Bundle\AppBundle\Entity\Comment:
             action: view
             path: /comments/{id}
             repository:
-                arguments: [id]
+                arguments: [$id]
             normalization_context:
                 groups: [read]

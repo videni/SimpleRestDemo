@@ -140,4 +140,31 @@ EOT;
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
     }
+
+     /**
+     * @test
+     */
+    public function it_allows_to_get_comments()
+    {
+        $fixtures = $this->loadFixturesFromFiles([
+            'resources/post.yml',
+            'resources/comment.yml',
+        ]);
+
+        $this->client->setServerParameter('HTTP_Authorization', $this->getToken("jane_admin", "kitten"));
+
+        $this->client->request(
+            'GET',
+            sprintf('/api/admin/posts/%s/comments', $fixtures['post1']),
+            [],
+            [],
+            [
+                'HTTP_ACCEPT' => 'application/json',
+                'CONTENT_TYPE' => 'application/json'
+            ]
+        );
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'comment/get_comments_response', Response::HTTP_OK);
+    }
 }
