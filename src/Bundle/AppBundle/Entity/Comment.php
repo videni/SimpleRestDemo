@@ -96,7 +96,7 @@ class Comment
         return !$containsInvalidCharacters;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

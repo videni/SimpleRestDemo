@@ -32,11 +32,8 @@ services:
     oro.cache.abstract: "@doctrine_cache.abstract.chain"
 
     App\Bundle\AppBundle\Factory\CommentFactory:
+        public: true
         arguments:
             - 'App\Bundle\AppBundle\Entity\Comment'
             - '@App\Bundle\AppBundle\Repository\PostRepository'
             - '@security.token_storage'
-
-    app_rest.factory.comment:
-        alias: 'App\Bundle\AppBundle\Factory\CommentFactory'
-        public: true
