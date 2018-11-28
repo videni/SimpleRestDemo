@@ -155,7 +155,7 @@ EOT;
 
         $this->client->request(
             'GET',
-            sprintf('/api/admin/posts/%s/comments?%s', $fixtures['post1']->getId(), 'publishedAt[gt]="2018-9-12 12:34:20"'),
+            sprintf('/api/admin/posts/%s/comments?%s', $fixtures['post1']->getId(), 'publishedAt[gt]="2018-9-12 12:34:20"&sort=publishedAt&page=1&size=50'),
             [],
             [],
             [
