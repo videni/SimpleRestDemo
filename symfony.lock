@@ -188,6 +188,9 @@
     "oro/property-access": {
         "version": "1.x-dev"
     },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.0.1"
+    },
     "phar-io/manifest": {
         "version": "1.0.3"
     },

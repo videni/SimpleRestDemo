@@ -10,14 +10,15 @@
         "lexik/jwt-authentication-bundle": "^2.6",
         "nelmio/cors-bundle": "^1.5",
         "oro/chain-processor": "^1.0@dev",
+        "oro/config": "^1.0@dev",
+        "oro/doctrine-utils": "^1.0@dev",
+        "pagerfanta/pagerfanta": "^2.0",
         "symfony/console": "4.1.*",
         "symfony/dotenv": "4.1.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.1.*",
         "symfony/validator": "4.1.*",
         "symfony/yaml": "4.1.*",
-        "oro/config": "^1.0@dev",
-        "oro/doctrine-utils": "^1.0@dev",
         "willdurand/hateoas-bundle": "^1.4"
     },
     "require-dev": {
