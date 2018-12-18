@@ -1,0 +1,35 @@
+App\Entity\User:
+    operations:
+        create_user:
+            path: '/users'
+            action: create
+            normalization_context:
+                   groups: ['read']
+            denormalization_context:
+                 groups: ['write']
+            validation_groups:  ['app_rest']
+        get_users:
+            path: '/users'
+            action: index
+            grid: 'app_user_grid'
+        get_user:
+            path: '/users/{id}'
+            action: view
+        update_user:
+            path: '/users/{id}'
+            action: update
+            normalization_context:
+                   groups: ['read']
+            denormalization_context:
+                 groups: update
+            validation_groups:  ['app_rest']
+        delete_user:
+            path: '/users/{id}'
+            action: delete
+    attributes:
+        normalization_context:
+             groups: ['read']
+        denormalization_context:
+           groups: ['write']
+        validation_groups:  ['app_rest']
+        route_prefix: /admin

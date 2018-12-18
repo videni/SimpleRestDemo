@@ -1,4 +1,4 @@
-App\Bundle\AppBundle\Entity\User:
+App\Entity\User:
     exclusion_policy: ALL
     xml_root_name: user
     properties:

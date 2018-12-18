@@ -32,7 +32,7 @@ class Kernel extends BaseKernel
 
         CumulativeResourceManager::getInstance()
             ->setBundles($bundles)
-            ->setAppRootDir($this->rootDir)
+            ->setAppRootDir($this->getProjectDir().'/src')
         ;
 
         return $bundles;
@@ -68,6 +68,7 @@ class Kernel extends BaseKernel
         $confDir = $this->getProjectDir().'/config';
 
         $loader->load($confDir.'/{packages}/*'.self::CONFIG_EXTS, 'glob');
+
         $loader->load($confDir.'/{packages}/'.$this->environment.'/**/*'.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/{services}'.self::CONFIG_EXTS, 'glob');
         $loader->load($confDir.'/{services}_'.$this->environment.self::CONFIG_EXTS, 'glob');

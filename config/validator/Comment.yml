@@ -1,4 +1,4 @@
-App\Bundle\AppBundle\Entity\Comment:
+App\Entity\Comment:
     properties:
         content:
             - NotBlank: { groups: ["app_rest"]}

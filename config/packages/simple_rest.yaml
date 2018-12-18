@@ -1,2 +1,2 @@
 imports:
-    - {  resource: '@AppRestBundle/Resources/config/app/config.yaml'}
+    - {  resource: '@VideniRestBundle/Resources/config/app/config.yaml'}

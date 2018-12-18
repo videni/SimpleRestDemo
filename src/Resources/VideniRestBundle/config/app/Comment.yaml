@@ -1,0 +1,80 @@
+api:
+    resources:
+        App\Entity\Comment:
+            denormalization_context:
+                groups: ['write']
+            normalization_context:
+                groups: [read]
+            route_prefix: /admin
+            validation_groups: [videni_rest]
+            factory: 'App\Factory\CommentFactory'
+            repository:
+                class: 'App\Repository\CommentRepository'
+            operations:
+                create_comment:
+                    denormalization_context:
+                        groups: [write]
+                    factory:
+                        method: createByPostId
+                        arguments: [$postId]
+                    action: create
+                    methods: ['POST']
+                    normalization_context:
+                        groups: [read]
+                    path: /posts/{postId}/comments
+                    validation_groups: [videni_rest]
+                    defaults:
+                        _format: 'json'
+                get_comments:
+                    paginator: comment
+                    action: index
+                    repository:
+                        method: createQueryBuilderByPostId
+                        arguments: [$postId]
+                    methods: ['POST', 'GET']
+                    path: /posts/{postId}/comments
+                delete_comment:
+                    action: delete
+                    path: /comments/{id}
+                update_comment:
+                    denormalization_context:
+                        groups: [write]
+                    action: update
+                    normalization_context:
+                        groups: [read]
+                    validation_groups: [videni_rest]
+                view_comment:
+                    action: view
+                    path: /comments/{id}
+                    repository:
+                        arguments: [$id]
+                    normalization_context:
+                        groups: [read]
+            paginators:
+                comment:
+                    max_results: 50
+                    sortings:
+                        publishedAt:
+                            property_path: publishedAt
+                            description: '按发布日期排序'
+                            order: asc
+                        enabled: asc
+                    disable_sorting: false
+                    filters:
+                        publishedAt:
+                            type: string
+                            description: '发布日期'
+                            property_path: 'publishedAt'
+                            allow_array: false
+                            allow_range: true
+                            options: ~
+                            operators: ['<', '<=', '>', '>=']
+                            collection: false
+                        enabled:
+                            type: boolean
+                            description: '是否启用'
+                            allow_array: false
+                            allow_range: true
+                            options: ~
+                            operators: ['=', '!=', '<', '<=', '>']
+                            collection: false
