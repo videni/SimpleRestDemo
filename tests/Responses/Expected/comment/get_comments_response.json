@@ -1,0 +1,31 @@
+{
+    "page": "@integer@",
+    "limit": "@integer@",
+    "pages": "@integer@",
+    "total": "@integer@",
+    "_links": {
+        "self": {
+            "href": "@string@.startsWith('/api/admin/posts')"
+        },
+        "first": {
+            "href": "@string@.startsWith('/api/admin/posts')"
+        },
+        "last": {
+            "href": "@string@.startsWith('/api/admin/posts')"
+        }
+    },
+    "_embedded": {
+        "items": [
+            {
+                "id": "@integer@",
+                "content": "@string@",
+                "published_at": "@string@",
+                "_links": {
+                    "self": {
+                        "href": "@string@.startsWith('/api/admin/comments')"
+                    }
+                }
+            }
+        ]
+    }
+}
