@@ -4,10 +4,11 @@ api:
             denormalization_context:
                 groups: ['write']
             normalization_context:
-                groups: [read]
+                groups: [read, 'Default']
             route_prefix: /admin
             validation_groups: [videni_rest]
             factory: 'App\Factory\CommentFactory'
+            form: 'App\Form\Type\CommentType'
             repository:
                 class: 'App\Repository\CommentRepository'
             operations:

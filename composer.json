@@ -11,14 +11,16 @@
         "oro/chain-processor": "^1.0@dev",
         "oro/config": "^1.0@dev",
         "oro/doctrine-utils": "^1.0@dev",
-        "symfony/console": "4.1.*",
-        "symfony/dotenv": "4.1.*",
+        "symfony/console": "^4.1",
+        "symfony/dotenv": "^4.1",
         "symfony/flex": "^1.1",
-        "symfony/framework-bundle": "4.1.*",
-        "symfony/validator": "4.1.*",
-        "symfony/yaml": "4.1.*",
+        "symfony/form": "^4.1",
+        "symfony/framework-bundle": "^4.1",
+        "symfony/validator": "^4.1",
+        "symfony/yaml": "^4.1",
+        "videni/simple-rest-bundle": "^1.0@dev",
         "willdurand/hateoas-bundle": "^1.4",
-        "videni/simple-rest-bundle": "^1.0@dev"
+        "willdurand/negotiation": "^2.3"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",
@@ -93,7 +95,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.1.*"
+            "require": "^4.1"
         }
     }
 }
